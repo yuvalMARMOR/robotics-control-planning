@@ -72,8 +72,10 @@ The project is divided into two major parts:
 ---
 
 ## 📑 Documentation
-- **Project Report:** `docs/final_project_report_robotics.pdf`  
-- **Installation Guide:** `docs/installation_and_execution_guide.pdf`  
+
+- [Project Report](docs/final_project_report_robotics.pdf)  
+- [Installation Guide](docs/installation_and_execution_guide.pdf)
+ 
 
 ---
 
