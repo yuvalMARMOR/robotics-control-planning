@@ -205,3 +205,38 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# =========================
+# MATLAB
+# =========================
+# Autosave / backup
+*.asv
+*.m~
+*.autosave
+
+# Figures & data
+*.fig
+*.mat
+
+# Simulink / cache
+*.slxc
+*.mdl.r*
+
+# Compiled MEX
+*.mex*
+*.mexw*
+*.mexa*
+*.mexmaci*
+
+# =========================
+# Project outputs
+# =========================
+mpc_motion_planning_output/
+*.gif
+*.png
+
+# =========================
+# OS junk
+# =========================
+.DS_Store
+Thumbs.db
