@@ -36,12 +36,12 @@ The Python implementation is accurately described as **GMM-guided trajectory sam
 
 The arm is represented by three revolute coordinates and one prismatic coordinate:
 
-$$
+```math
 q =
 \begin{bmatrix}
 \theta_1 & \theta_2 & \theta_3 & d_4
 \end{bmatrix}^{T}.
-$$
+```
 
 <p align="center">
   <img src="assets/images/robot-arm-kinematic-structure.jpg" alt="Reported kinematic structure and coordinate frames of the robotic arm" width="440">
@@ -55,29 +55,29 @@ The MATLAB and Python programs use different frame and parameter conventions. Th
 
 The reported dynamics begin with kinetic and potential energy:
 
-$$
+```math
 L(q,\dot q) = T(q,\dot q) - U(q),
-$$
+```
 
-$$
+```math
 T_i = \frac{1}{2}m_i v_i^2 + \frac{1}{2}I_i\dot\theta_i^2,
 \qquad
 U = \sum_{i=1}^{5}m_i g h_i(q).
-$$
+```
 
 Applying the Euler-Lagrange equation,
 
-$$
+```math
 \frac{d}{dt}\left(\frac{\partial L}{\partial \dot q_i}\right)
-- \frac{\partial L}{\partial q_i}
+\quad - \frac{\partial L}{\partial q_i}
 = \tau_i,
-$$
+```
 
 gives the conventional manipulator form
 
-$$
+```math
 M(q)\ddot q + C(q,\dot q)\dot q + G(q) = \tau.
-$$
+```
 
 The MATLAB source implements a project-specific simplification using a constant diagonal inertia matrix and a configuration-dependent vector named `coriolisMat`. The notebook documents where this implementation differs from the conventional decomposition above.
 
@@ -85,26 +85,26 @@ The MATLAB source implements a project-specific simplification using a constant 
 
 For reference $r(t)$ and measured output $y(t)$, the tracking error is
 
-$$
+```math
 e(t) = r(t) - y(t),
-$$
+```
 
 and the ideal continuous-time PID law is
 
-$$
+```math
 u(t) = K_p e(t)
-+ K_i\int_0^t e(\tau)\,d\tau
-+ K_d\frac{de(t)}{dt}.
-$$
+\quad + K_i\int_0^t e(\tau)\,d\tau
+\quad + K_d\frac{de(t)}{dt}.
+```
 
 The reported target is
 
-$$
+```math
 q_d =
 \begin{bmatrix}
 90^\circ & 90^\circ & 90^\circ & 40\,\mathrm{mm}
 \end{bmatrix}^{T}.
-$$
+```
 
 The controller study uses manually selected gains for every coordinate. Gain mapping, state feedback, integration, and prismatic-axis issues found in the tracked script are explicitly analyzed in the notebook.
 
@@ -112,40 +112,43 @@ The controller study uses manually selected gains for every coordinate. Gain map
 
 For each planning scenario, the Python program generates straight, via-point, random, and obstacle-aware trajectory candidates. Feasible trajectories are flattened and used to fit a Gaussian mixture:
 
-$$
+```math
 p(x) = \sum_{k=1}^{K}\pi_k\,
 \mathcal{N}(x\mid\mu_k,\Sigma_k),
 \qquad K \le 3.
-$$
+```
 
 New trajectories are sampled from the fitted model and combined with heuristic exploration samples. Each candidate is checked against joint limits and the implemented point-based collision test.
 
 ### MPC-style candidate objective
 
-The implemented scoring function combines configuration error, task-space error, control effort, obstacle proximity, smoothness, and a terminal penalty. In compact form:
+The implemented scoring function combines configuration error, task-space error, control effort, obstacle proximity, smoothness, and a terminal penalty. Define the stage cost as
 
-$$
-\begin{aligned}
-J = \sum_{t=0}^{N-1} \Big(&
+```math
+\ell_t =
 w_t e_{q,t}^{T}Q_{\mathrm{pos}}e_{q,t}
-+ 50w_t\lVert p(q_t)-p(q_g)\rVert_2^2 \\
-&+ \Delta q_t^{T}R\Delta q_t
-+ J_{\mathrm{obs},t}
-+ 0.1\left\lVert\frac{\Delta q_t}{\Delta t}\right\rVert_2^2
-\Big)
-+ 100\lVert q_{N-1}-q_g\rVert_2^2.
-\end{aligned}
-$$
+\quad + 50w_t\lVert p(q_t)-p(q_g)\rVert_2^2
+\quad + \Delta q_t^{T}R\Delta q_t
+\quad + J_{\mathrm{obs},t}
+\quad + 0.1\left\lVert\frac{\Delta q_t}{\Delta t}\right\rVert_2^2.
+```
+
+The complete candidate cost is
+
+```math
+J = \sum_{t=0}^{N-1}\ell_t
+\quad + 100\lVert q_{N-1}-q_g\rVert_2^2.
+```
 
 The controller selects the lowest-cost feasible trajectory and applies only its first action:
 
-$$
-\dot q_k = \operatorname{clip}\!\left(
+```math
+\dot q_k = \mathrm{clip}\!\left(
 2\frac{q_1^{\star}-q_0^{\star}}{\Delta t},-1,1
 \right),
 \qquad
 q_{k+1}=q_k+\dot q_k\Delta t.
-$$
+```
 
 This is receding-horizon selection over sampled kinematic trajectories, not torque-level nonlinear MPC.
 
