@@ -1,83 +1,145 @@
-# Robotics Control & Planning
+# Robotics Control and Learning-Guided Motion Planning
 
-Simulation and control of a **4-DOF robotic arm** as part of a robotics mini-project.  
-The project is divided into two major parts:
+Simulation, control, and motion planning for a four-degree-of-freedom (4-DOF) robotic arm. The repository combines a MATLAB study of open-loop dynamics and PID position control with a Python implementation of learning-guided trajectory sampling and MPC-style receding-horizon selection.
 
-1. **MATLAB (Part 1):**
-   - Derivation of dynamics for a 3R+1P robotic arm.
-   - Open-loop simulation (without PID).
-   - Closed-loop simulation with a PID controller.
+![System architecture](assets/images/system-architecture.png)
 
-2. **Python (Part 2):**
-   - Motion planning using **Model Predictive Control (MPC)**.
-   - Learning-based sampling with **Normalizing Flow**.
-   - Simulation of obstacle avoidance and trajectory tracking.
+> The figures in this repository are preserved historical simulation outputs. The current source code and the supplied figures are not fully version-aligned; known differences are documented in the technical notebook.
 
----
+## Project overview
 
-## 📂 Project Structure
+The project is organized into two complementary parts:
 
+1. **Dynamic simulation and PID control (MATLAB)**
+   - 3R+1P arm representation.
+   - Lagrangian model and gravity-related terms.
+   - Open-loop numerical integration.
+   - Joint-space PID position control.
+
+2. **Learning-guided motion planning (Python)**
+   - Forward kinematics for a 4-DOF arm.
+   - Spherical workspace obstacles.
+   - Synthetic candidate-trajectory generation.
+   - Gaussian Mixture Model (GMM) trajectory distribution.
+   - MPC-style candidate scoring and first-action execution.
+   - Configuration-space, task-space, sampling, and animation outputs.
+
+The Python implementation is best described as **GMM-guided trajectory sampling with an MPC-style cost function**. It is inspired by learning-based sampling literature, but it does not implement a Conditional Variational Autoencoder (CVAE) or a normalizing-flow network.
+
+## System flow
+
+```text
+MATLAB dynamics
+robot parameters -> equations of motion -> open-loop / PID integration -> plots
+
+Python planning
+scenario + obstacles -> synthetic trajectories -> GMM fit -> candidate scoring
+                     -> first control action -> state update -> plots and GIFs
 ```
+
+## Repository structure
+
+```text
 .
-├── docs/
-│   ├── final_project_report_robotics.pdf        # Full academic report
-│   └── installation_and_execution_guide.pdf     # How to install and run
-│
+├── assets/images/                   # Preserved simulation figures
+├── notebooks/
+│   └── robotics_control_planning.ipynb
 ├── src/
 │   ├── matlab/
-│   │   ├── part1_not_pid.m                      # Dynamics simulation without PID
-│   │   └── part1_pid.m                          # Dynamics simulation with PID
-│   │
+│   │   ├── part1_not_pid.m
+│   │   └── part1_pid.m
 │   └── python/
-│       └── part2_control.py                     # MPC motion planning with Normalizing Flow
-│
+│       └── part2_control.py
+├── .gitattributes
 ├── .gitignore
-└── LICENSE
+├── LICENSE
+├── README.md
+└── requirements.txt
 ```
 
----
+## Technical notebook
 
-## ⚙️ Requirements
+The [technical notebook](notebooks/robotics_control_planning.ipynb) is the primary engineering reference. It follows a theory -> source code -> visual result -> interpretation structure and includes:
 
-### MATLAB (Part 1)
-- MATLAB R2020a or newer (tested on R2022b).  
-- No additional toolboxes required beyond core MATLAB.  
+- System geometry, notation, parameters, and units.
+- Lagrangian dynamics and PID equations.
+- Direct links and excerpts from the MATLAB and Python implementations.
+- Preserved open-loop, PID, and motion-planning figures.
+- A theory-to-code crosswalk.
+- Result provenance and reproducibility constraints.
+- Verified implementation limitations and unresolved inconsistencies.
 
-### Python (Part 2)
-- Python **3.7+**  
-- Required libraries:  
-  ```
-  pip install numpy matplotlib scipy scikit-learn
-  ```
+## Requirements
 
----
+### MATLAB part
 
-## ▶️ How to Run
+- MATLAB with core plotting and matrix operations.
+- No project-specific toolbox dependency is evident from the source.
 
-### Part 1 (MATLAB)
-1. Open MATLAB.  
-2. Navigate to `src/matlab/`.  
-3. Run either:  
-   - `part1_not_pid.m` → Open-loop simulation.  
-   - `part1_pid.m` → Closed-loop simulation with PID.  
+The historical MATLAB version is not recorded, so no tested-version claim is made.
 
-### Part 2 (Python)
-1. Navigate to `src/python/`.  
-2. Run:  
-   ```
-   python part2_control.py
-   ```
-3. Results (plots & animations) will be saved in `mpc_motion_planning_output/`.  
+### Python part
 
----
+- Python 3.9 or newer is recommended.
+- Dependencies listed in `requirements.txt`.
 
-## 📑 Documentation
+Create an isolated environment and install the dependencies:
 
-- [Project Report](docs/final_project_report_robotics.pdf)  
-- [Installation Guide](docs/installation_and_execution_guide.pdf)
- 
+```bash
+python -m venv .venv
+```
 
----
+Windows PowerShell:
 
-## 📜 License
-This project is released under the **MIT License**.
+```powershell
+.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+macOS or Linux:
+
+```bash
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+```
+
+## Running the simulations
+
+From MATLAB, change to `src/matlab/` and run either:
+
+```matlab
+run('part1_not_pid.m')  % Open-loop simulation
+run('part1_pid.m')      % PID-controlled simulation
+```
+
+From the repository root, run the Python planning study with:
+
+```bash
+python src/python/part2_control.py
+```
+
+The Python script creates `mpc_motion_planning_output/` relative to the current working directory. It may contain configuration-space plots, task-space plots, sampling plots, GIF animations, and a summary figure.
+
+## Preserved results
+
+| Study | Available artifact | Provenance |
+|---|---|---|
+| Open-loop dynamics | Position, velocity, and arm-configuration figures | Historical supplied simulation output |
+| PID control | Position, velocity, and arm-configuration figures | Historical supplied simulation output |
+| Point-to-point planning | Task-space and configuration-space figures | Historical supplied simulation output |
+| Complex maneuvering | Task-space and configuration-space figures | Historical supplied simulation output |
+
+No raw result arrays, environment lockfile, or run log accompanied these figures. They should therefore be treated as preserved project evidence rather than newly reproduced benchmarks.
+
+## Known limitations
+
+- The supplied figures appear to originate from an earlier source revision in several places.
+- The MATLAB model mixes unit systems and contains state-update and controller-mapping issues documented in the notebook.
+- Python collision checking tests joint positions rather than full link segments.
+- The Python planner uses a GMM, not the CVAE described by the referenced research method.
+- There is no automated test suite or independently reproduced performance baseline.
+- Generated PNG and GIF output is ignored by default; only curated documentation assets are tracked.
+
+## License
+
+Released under the [MIT License](LICENSE).

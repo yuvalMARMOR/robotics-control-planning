@@ -1,0 +1,6 @@
+# Historical package versions were not preserved; these are the direct runtime dependencies.
+numpy
+matplotlib
+scipy
+scikit-learn
+Pillow

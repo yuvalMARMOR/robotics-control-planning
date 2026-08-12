@@ -235,6 +235,11 @@ mpc_motion_planning_output/
 *.gif
 *.png
 
+# Curated documentation figures are intentionally tracked.
+!assets/
+!assets/images/
+!assets/images/*.png
+
 # =========================
 # OS junk
 # =========================

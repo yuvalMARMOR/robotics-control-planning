@@ -1,0 +1,2 @@
+# Keep the language chart focused on implementation source rather than documentation.
+notebooks/*.ipynb linguist-documentation
