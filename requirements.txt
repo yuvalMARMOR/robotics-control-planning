@@ -1,6 +1,7 @@
-# Historical package versions were not preserved; these are the direct runtime dependencies.
-numpy
-matplotlib
-scipy
-scikit-learn
-Pillow
+# Corrected Python workflow tested with CPython 3.13.0 on 2026-08-31.
+# Historical dependency versions remain unknown and are not implied by this lock.
+numpy==2.1.2
+matplotlib==3.9.2
+scipy==1.14.1
+scikit-learn==1.6.0
+Pillow==10.4.0

@@ -3,7 +3,7 @@ clc;
 %% Define coordinates
 
 timeStep = 0.1; % time step
-timeVec = 1:timeStep:30;
+timeVec = 0:timeStep:30;
 numSamples = length(timeVec); % number of time samples
 
 % Initial generalized coordinates 
@@ -11,7 +11,7 @@ angle1 = 0;
 angle2 = 0; 
 angle3 = 0;
 linearPos = 0;
-angles = [angle1 angle2 angle3 linearPos];
+angles = [angle1; angle2; angle3; linearPos];
  
 % Define intermediate variables
 cos1 = cosd(angle1);
@@ -26,7 +26,7 @@ angle1Vel = 0;
 angle2Vel = 0; 
 angle3Vel = 0;
 linearVel = 0;
-anglesVel = [angle1Vel angle2Vel angle3Vel linearVel];
+anglesVel = [angle1Vel; angle2Vel; angle3Vel; linearVel];
 
 angle1VelArr = zeros(1, numSamples);
 angle2VelArr = zeros(1, numSamples);
@@ -38,12 +38,17 @@ angle2Arr = zeros(1, numSamples);
 angle3Arr = zeros(1, numSamples);
 linearArr = zeros(1, numSamples);
 
+angle1Arr(1) = angle1;
+angle2Arr(1) = angle2;
+angle3Arr(1) = angle3;
+linearArr(1) = linearPos;
+
 % Desired angles 
 angle1_d = 90; 
 angle2_d = 90; 
 angle3_d = 90;
 linear_d = 40;
-angles_d = [angle1_d angle2_d angle3_d linear_d];
+angles_d = [angle1_d; angle2_d; angle3_d; linear_d];
 
 % Desired velocities 
 angle1Vel_d = 0; 
@@ -52,7 +57,10 @@ angle3Vel_d = 0;
 linearVel_d = 0;
 anglesVel_d = [angle1Vel_d angle2Vel_d angle3Vel_d linearVel_d];
 
-K = [1.5 1.5 1.5 1.5 30.595 14.2 19.68 29.85 0.005 0.005 0.005 0.01];
+% Documented ordering: Kp, Ki, Kd for the four coordinates.
+Kp = [1.5; 1.5; 1.5; 1.5];
+Ki = [30.595; 14.2; 19.68; 29.85];
+Kd = [0.005; 0.005; 0.005; 0.01];
 
 % Length of links
 link1 = 187.5;
@@ -77,58 +85,59 @@ inertia3 = 400;
 inertia4 = 500;
 inertia5 = 700;
 
-integralError = [0 0 0 0];
-totalError = [0 0 0 0];
-prevError = [0 0 0 0];
-
-integralErrorVel = [0 0 0 0];
-totalErrorVel = [0 0 0 0];
-prevErrorVel = [0 0 0 0];
+integralError = zeros(4, 1);
+prevError = angles_d - angles;
 
 %% Computing
 
-for i = 1 : numSamples
+for i = 2:numSamples
     inertiaMat = [inertia2 0 0 0;
                   0 inertia3 0 0;
                   0 0 inertia4 0;
                   0 0 0 inertia5];
 
-    inputTorques = [2 2 2 5]; % vector of moments for each motor joint
+    % Legacy per-coordinate numerical actuator scales; physical units unresolved.
+    actuatorScale = [2; 2; 2; 5];
     d4 = link5 + linearPos;
 
-    coriolisMat = [sin1 * (mass2 * gravity * link2 / 2 + mass3 * gravity * link3 + mass4 * gravity * link4 + mass5 * gravity * link5) - sin1 * cos2 * (mass3 * gravity * link3 / 2 + mass4 * gravity * link4 + mass5 * gravity * link5) - sin1 * cos2 * cos3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) + cos1 * sin2 * cos3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) + cos1 * sin2 * cos3 * mass5 * gravity * d4 / 2;
+    % Configuration-dependent legacy load expression. It contains gravity
+    % terms and is not a conventional Coriolis matrix C(q,qdot).
+    gravityConfigVec = [sin1 * (mass2 * gravity * link2 / 2 + mass3 * gravity * link3 + mass4 * gravity * link4 + mass5 * gravity * link5) - sin1 * cos2 * (mass3 * gravity * link3 / 2 + mass4 * gravity * link4 + mass5 * gravity * link5) - sin1 * cos2 * cos3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) + cos1 * sin2 * cos3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) + cos1 * sin2 * cos3 * mass5 * gravity * d4 / 2;
                   -cos1 * sin2 * (mass3 * gravity * link3 / 2 + mass4 * gravity * link4 + mass5 * gravity * link5) + sin1 * cos2 * (mass3 * gravity * link3 / 2 + mass4 * gravity * link4 + mass5 * gravity * link5) - cos1 * sin2 * cos3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) + sin1 * cos2 * cos3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) + sin1 * cos2 * cos3 * mass5 * gravity * d4 / 2;
                   -cos1 * cos2 * sin3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) - sin1 * sin2 * sin3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) - sin1 * sin2 * sin3 * mass5 * gravity * d4 / 2;
                   -mass5 * gravity / 2];
 
     errorAngles = angles_d - angles;
-    integralError = integralError + errorAngles;
+    integralError = integralError + errorAngles * timeStep;
     errorVel = (errorAngles - prevError) / timeStep;
 
     prevError = errorAngles;
     
-    % Compute torques
-    torques = K(:,1:4).*errorAngles + K(:,5:8).*errorVel + K(:,9:12).*integralError;
+    % Coordinate-wise PID signal and explicit four-element generalized input.
+    controlSignal = Kp .* errorAngles + Ki .* integralError + Kd .* errorVel;
+    generalizedInput = actuatorScale .* controlSignal;
 
     % Calculate angular accelerations
-    angularAccel = inertiaMat \ (torques' * inputTorques) - inertiaMat \ (coriolisMat * anglesVel);
+    angularAccel = inertiaMat \ (generalizedInput - gravityConfigVec);
 
-    % Update angular velocities
-    angle1Vel = angularAccel(1) * timeStep + angle1Vel;
-    angle2Vel = angularAccel(2) * timeStep + angle2Vel;
-    angle3Vel = angularAccel(3) * timeStep + angle3Vel;
-    linearVel = angularAccel(4) * timeStep + linearVel;
+    % Constant-acceleration state update using the old velocity in q update.
+    angle1 = angle1 + angle1Vel * timeStep + 0.5 * angularAccel(1) * timeStep^2;
+    angle2 = angle2 + angle2Vel * timeStep + 0.5 * angularAccel(2) * timeStep^2;
+    angle3 = angle3 + angle3Vel * timeStep + 0.5 * angularAccel(3) * timeStep^2;
+    linearPos = linearPos + linearVel * timeStep + 0.5 * angularAccel(4) * timeStep^2;
+
+    angle1Vel = angle1Vel + angularAccel(1) * timeStep;
+    angle2Vel = angle2Vel + angularAccel(2) * timeStep;
+    angle3Vel = angle3Vel + angularAccel(3) * timeStep;
+    linearVel = linearVel + angularAccel(4) * timeStep;
+
+    angles = [angle1; angle2; angle3; linearPos];
+    anglesVel = [angle1Vel; angle2Vel; angle3Vel; linearVel];
 
     angle1VelArr(i) = angle1Vel;
     angle2VelArr(i) = angle2Vel;
     angle3VelArr(i) = angle3Vel;
     linearVelArr(i) = linearVel;
-
-    % Update angles
-    angle1 = angularAccel(1) * timeStep * timeStep * 0.5 + angle1Vel * timeStep + angle1;
-    angle2 = angularAccel(2) * timeStep * timeStep * 0.5 + angle2Vel * timeStep + angle2;
-    angle3 = angularAccel(3) * timeStep * timeStep * 0.5 + angle3Vel * timeStep + angle3;
-    linearPos = angularAccel(3) * timeStep * timeStep * 0.5 + linearVel * timeStep + linearPos;
 
     angle1Arr(i) = angle1;
     angle2Arr(i) = angle2;
@@ -157,10 +166,6 @@ for i = 1 : numSamples
 
     plot3(xCoords, yCoords, zCoords, '-o', 'LineWidth', 1.5, 'MarkerSize', 6, 'MarkerFaceColor', 'r');
     grid on;
-    
-    if (angle1Arr(i) > angle1_d || angle2Arr(i) > angle2_d || angle3Arr(i) > angle3_d || linearArr(i) > linear_d)
-        break; 
-    end
     
     xlim([-300, 300]);
     ylim([-300, 300]);
