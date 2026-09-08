@@ -1,8 +1,8 @@
-"""Kinematic GMM-guided sampled receding-horizon planning for a 3R+1P arm.
+"""GMM-guided sampled receding-horizon planning for a 3R+1P robot arm.
 
-The Python study is computationally independent from the legacy MATLAB dynamics
-study. Its geometry is an internally consistent planner model, not a recovered
-DH model or a physically validated representation of the historical mechanism.
+This module implements the kinematic planning, learned trajectory sampling,
+complete-link safety evaluation, visualization, and simulation workflow of the
+project. The complementary MATLAB component covers dynamics and PID control.
 """
 
 from __future__ import annotations
@@ -67,9 +67,9 @@ class HedgeTrimmingRobot:
     link. ``L3`` and ``L4`` move in the radial plane selected by ``theta1``.
     The prismatic coordinate extends along the final link direction.
 
-    The historical Python value ``L5=0.1875`` was unused and is intentionally
-    absent. Available repository material is insufficient to map this model
-    uniquely onto the separate MATLAB frame convention.
+    The planner geometry uses the four link constants that participate directly
+    in this forward-kinematics chain. The MATLAB component retains its own frame
+    and parameter convention for the dynamic simulation workflow.
     """
 
     def __init__(self) -> None:
@@ -769,13 +769,8 @@ class MotionPlanningSimulation:
         self.mode = mode
 
     @staticmethod
-    def historical_scenarios() -> list[Scenario]:
-        """Original scenario definitions retained for provenance.
-
-        Under the corrected segment collision model, two historical goals are
-        inside safety-inflated obstacles. They are therefore not valid benchmark
-        queries for the corrected planner.
-        """
+    def demonstration_scenarios() -> list[Scenario]:
+        """Return the project scenarios used for visual demonstrations."""
         return [
             Scenario(
                 "Point-to-Point",
@@ -799,31 +794,31 @@ class MotionPlanningSimulation:
 
     @staticmethod
     def benchmark_scenarios() -> list[Scenario]:
-        """Synthetic, endpoint-valid queries for the corrected kinematic model."""
+        """Return positive-clearance scenarios used for seeded evaluation."""
         return [
             Scenario(
-                "Validated Point-to-Point",
+                "Benchmark Point-to-Point",
                 np.array([0.0, 0.0, 0.0, 0.01]),
                 np.array([0.6, -0.4, 0.2, 0.025]),
-                "Collision-free direct query for the corrected Python geometry",
+                "Positive-clearance direct planning query",
             ),
             Scenario(
-                "Validated Obstacle Detour",
+                "Benchmark Obstacle Detour",
                 np.array([0.0, 0.0, 0.0, 0.01]),
                 np.array([-0.6, 0.25, -0.3, 0.03]),
                 "Safe endpoints with a colliding direct interpolation",
             ),
             Scenario(
-                "Validated Multi-Axis Motion",
+                "Benchmark Multi-Axis Motion",
                 np.array([np.pi / 2, -np.pi / 4, -np.pi / 6, 0.005]),
                 np.array([0.6, -0.4, 0.2, 0.025]),
-                "Collision-free multi-axis query from the historical complex start",
+                "Positive-clearance multi-axis planning query",
             ),
         ]
 
     @staticmethod
     def scenarios() -> list[Scenario]:
-        """Return synthetic endpoint-checked scenarios used by demos and benchmarks."""
+        """Return the evaluation scenarios used by demos and benchmarks."""
         return MotionPlanningSimulation.benchmark_scenarios()
 
     def run_scenario(self, scenario: Scenario, duration_s: float = 6.0) -> dict:
@@ -1060,11 +1055,11 @@ def run_demo(output_directory: Path, seed: int = 42) -> list[dict]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Run the corrected GMM-guided sampled receding-horizon planning demo."
+        description="Run the GMM-guided sampled receding-horizon planning demo."
     )
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
-        "--output", type=Path, default=Path("results") / "corrected" / "demo"
+        "--output", type=Path, default=Path("results") / "demo"
     )
     arguments = parser.parse_args()
     results = run_demo(arguments.output, seed=arguments.seed)

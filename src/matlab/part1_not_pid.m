@@ -74,12 +74,11 @@ for i = 2:numSamples
                   0 0 inertia4 0;
                   0 0 0 inertia5];
 
-    % Legacy numerical generalized inputs. Their physical units are unresolved.
+    % Project generalized inputs for the open-loop numerical study.
     inputTorques = [2; 2; 2; 5];
     d4 = link5 + linearPos;
 
-    % Configuration-dependent legacy load expression. It contains gravity
-    % terms and is not a conventional Coriolis matrix C(q,qdot).
+    % Configuration-dependent project load expression with gravity terms.
     gravityConfigVec = [sin1 * (mass2 * gravity * link2 / 2 + mass3 * gravity * link3 + mass4 * gravity * link4 + mass5 * gravity * link5) - sin1 * cos2 * (mass3 * gravity * link3 / 2 + mass4 * gravity * link4 + mass5 * gravity * link5) - sin1 * cos2 * cos3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) + cos1 * sin2 * cos3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) + cos1 * sin2 * cos3 * mass5 * gravity * d4 / 2;
                   -cos1 * sin2 * (mass3 * gravity * link3 / 2 + mass4 * gravity * link4 + mass5 * gravity * link5) + sin1 * cos2 * (mass3 * gravity * link3 / 2 + mass4 * gravity * link4 + mass5 * gravity * link5) - cos1 * sin2 * cos3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) + sin1 * cos2 * cos3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) + sin1 * cos2 * cos3 * mass5 * gravity * d4 / 2;
                   -cos1 * cos2 * sin3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) - sin1 * sin2 * sin3 * (mass4 * gravity * link4 / 2 + mass5 * gravity * link5) - sin1 * sin2 * sin3 * mass5 * gravity * d4 / 2;

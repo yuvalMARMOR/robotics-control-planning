@@ -133,7 +133,7 @@ class CollisionGeometryTests(unittest.TestCase):
         self.assertTrue(empty_environment.is_trajectory_feasible(self.robot, safe))
         self.assertFalse(empty_environment.is_trajectory_feasible(self.robot, unsafe_limits))
 
-    def test_corrected_benchmark_scenario_endpoints_are_collision_free(self):
+    def test_benchmark_scenario_endpoints_are_collision_free(self):
         environment = Environment()
         scenarios = MotionPlanningSimulation.benchmark_scenarios()
         for scenario in scenarios:

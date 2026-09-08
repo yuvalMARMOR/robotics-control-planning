@@ -106,7 +106,7 @@
   "summary": [
     {
       "mode": "gmm_heuristic",
-      "scenario": "Validated Multi-Axis Motion",
+      "scenario": "Benchmark Multi-Axis Motion",
       "runs": 20,
       "success_rate": 1.0,
       "goal_reached_rate": 1.0,
@@ -170,7 +170,7 @@
     },
     {
       "mode": "gmm_heuristic",
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "runs": 20,
       "success_rate": 0.2,
       "goal_reached_rate": 0.2,
@@ -234,7 +234,7 @@
     },
     {
       "mode": "gmm_heuristic",
-      "scenario": "Validated Point-to-Point",
+      "scenario": "Benchmark Point-to-Point",
       "runs": 20,
       "success_rate": 1.0,
       "goal_reached_rate": 1.0,
@@ -298,7 +298,7 @@
     },
     {
       "mode": "heuristic",
-      "scenario": "Validated Multi-Axis Motion",
+      "scenario": "Benchmark Multi-Axis Motion",
       "runs": 20,
       "success_rate": 1.0,
       "goal_reached_rate": 1.0,
@@ -362,7 +362,7 @@
     },
     {
       "mode": "heuristic",
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "runs": 20,
       "success_rate": 0.25,
       "goal_reached_rate": 0.25,
@@ -426,7 +426,7 @@
     },
     {
       "mode": "heuristic",
-      "scenario": "Validated Point-to-Point",
+      "scenario": "Benchmark Point-to-Point",
       "runs": 20,
       "success_rate": 1.0,
       "goal_reached_rate": 1.0,
@@ -490,7 +490,7 @@
     },
     {
       "mode": "uniform",
-      "scenario": "Validated Multi-Axis Motion",
+      "scenario": "Benchmark Multi-Axis Motion",
       "runs": 20,
       "success_rate": 0.0,
       "goal_reached_rate": 0.0,
@@ -554,7 +554,7 @@
     },
     {
       "mode": "uniform",
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "runs": 20,
       "success_rate": 0.0,
       "goal_reached_rate": 0.0,
@@ -618,7 +618,7 @@
     },
     {
       "mode": "uniform",
-      "scenario": "Validated Point-to-Point",
+      "scenario": "Benchmark Point-to-Point",
       "runs": 20,
       "success_rate": 0.0,
       "goal_reached_rate": 0.0,
@@ -874,8 +874,8 @@
   ],
   "runs": [
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 0,
       "control_period_s": 0.05,
@@ -1225,8 +1225,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 0,
       "control_period_s": 0.05,
@@ -1576,8 +1576,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 0,
       "control_period_s": 0.05,
@@ -2967,7 +2967,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 0,
@@ -4358,7 +4358,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 0,
@@ -5749,7 +5749,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 0,
@@ -7140,8 +7140,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 0,
       "control_period_s": 0.05,
@@ -7595,8 +7595,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 0,
       "control_period_s": 0.05,
@@ -8050,8 +8050,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 0,
       "control_period_s": 0.05,
@@ -9441,8 +9441,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 1,
       "control_period_s": 0.05,
@@ -9792,8 +9792,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 1,
       "control_period_s": 0.05,
@@ -10143,8 +10143,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 1,
       "control_period_s": 0.05,
@@ -11534,7 +11534,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 1,
@@ -12925,7 +12925,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 1,
@@ -14316,7 +14316,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 1,
@@ -15707,8 +15707,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 1,
       "control_period_s": 0.05,
@@ -16162,8 +16162,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 1,
       "control_period_s": 0.05,
@@ -16617,8 +16617,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 1,
       "control_period_s": 0.05,
@@ -18008,8 +18008,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 2,
       "control_period_s": 0.05,
@@ -18359,8 +18359,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 2,
       "control_period_s": 0.05,
@@ -18710,8 +18710,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 2,
       "control_period_s": 0.05,
@@ -20101,7 +20101,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 2,
@@ -21492,7 +21492,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 2,
@@ -22883,7 +22883,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 2,
@@ -24274,8 +24274,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 2,
       "control_period_s": 0.05,
@@ -24729,8 +24729,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 2,
       "control_period_s": 0.05,
@@ -25184,8 +25184,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 2,
       "control_period_s": 0.05,
@@ -26575,8 +26575,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 3,
       "control_period_s": 0.05,
@@ -26926,8 +26926,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 3,
       "control_period_s": 0.05,
@@ -27277,8 +27277,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 3,
       "control_period_s": 0.05,
@@ -28668,7 +28668,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 3,
@@ -30059,7 +30059,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 3,
@@ -31450,7 +31450,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 3,
@@ -32841,8 +32841,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 3,
       "control_period_s": 0.05,
@@ -33296,8 +33296,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 3,
       "control_period_s": 0.05,
@@ -33751,8 +33751,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 3,
       "control_period_s": 0.05,
@@ -35142,8 +35142,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 4,
       "control_period_s": 0.05,
@@ -35493,8 +35493,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 4,
       "control_period_s": 0.05,
@@ -35844,8 +35844,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 4,
       "control_period_s": 0.05,
@@ -37235,7 +37235,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 4,
@@ -38626,7 +38626,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 4,
@@ -40017,7 +40017,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 4,
@@ -41408,8 +41408,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 4,
       "control_period_s": 0.05,
@@ -41863,8 +41863,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 4,
       "control_period_s": 0.05,
@@ -42318,8 +42318,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 4,
       "control_period_s": 0.05,
@@ -43709,8 +43709,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 5,
       "control_period_s": 0.05,
@@ -44060,8 +44060,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 5,
       "control_period_s": 0.05,
@@ -44411,8 +44411,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 5,
       "control_period_s": 0.05,
@@ -45802,7 +45802,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 5,
@@ -47193,7 +47193,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 5,
@@ -48155,7 +48155,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 5,
@@ -49546,8 +49546,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 5,
       "control_period_s": 0.05,
@@ -50001,8 +50001,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 5,
       "control_period_s": 0.05,
@@ -50456,8 +50456,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 5,
       "control_period_s": 0.05,
@@ -51847,8 +51847,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 6,
       "control_period_s": 0.05,
@@ -52198,8 +52198,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 6,
       "control_period_s": 0.05,
@@ -52549,8 +52549,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 6,
       "control_period_s": 0.05,
@@ -53940,7 +53940,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 6,
@@ -55331,7 +55331,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 6,
@@ -56683,7 +56683,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 6,
@@ -58074,8 +58074,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 6,
       "control_period_s": 0.05,
@@ -58529,8 +58529,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 6,
       "control_period_s": 0.05,
@@ -58984,8 +58984,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 6,
       "control_period_s": 0.05,
@@ -60375,8 +60375,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 7,
       "control_period_s": 0.05,
@@ -60726,8 +60726,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 7,
       "control_period_s": 0.05,
@@ -61077,8 +61077,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 7,
       "control_period_s": 0.05,
@@ -62468,7 +62468,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 7,
@@ -63859,7 +63859,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 7,
@@ -64860,7 +64860,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 7,
@@ -66251,8 +66251,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 7,
       "control_period_s": 0.05,
@@ -66706,8 +66706,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 7,
       "control_period_s": 0.05,
@@ -67161,8 +67161,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 7,
       "control_period_s": 0.05,
@@ -68552,8 +68552,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 8,
       "control_period_s": 0.05,
@@ -68903,8 +68903,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 8,
       "control_period_s": 0.05,
@@ -69254,8 +69254,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 8,
       "control_period_s": 0.05,
@@ -70645,7 +70645,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 8,
@@ -71620,7 +71620,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 8,
@@ -73011,7 +73011,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 8,
@@ -74402,8 +74402,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 8,
       "control_period_s": 0.05,
@@ -74857,8 +74857,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 8,
       "control_period_s": 0.05,
@@ -75312,8 +75312,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 8,
       "control_period_s": 0.05,
@@ -76703,8 +76703,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 9,
       "control_period_s": 0.05,
@@ -77054,8 +77054,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 9,
       "control_period_s": 0.05,
@@ -77405,8 +77405,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 9,
       "control_period_s": 0.05,
@@ -78796,7 +78796,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 9,
@@ -79641,7 +79641,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 9,
@@ -81032,7 +81032,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 9,
@@ -82423,8 +82423,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 9,
       "control_period_s": 0.05,
@@ -82878,8 +82878,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 9,
       "control_period_s": 0.05,
@@ -83333,8 +83333,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 9,
       "control_period_s": 0.05,
@@ -84724,8 +84724,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 10,
       "control_period_s": 0.05,
@@ -85075,8 +85075,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 10,
       "control_period_s": 0.05,
@@ -85426,8 +85426,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 10,
       "control_period_s": 0.05,
@@ -86817,7 +86817,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 10,
@@ -87519,7 +87519,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 10,
@@ -88910,7 +88910,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 10,
@@ -90301,8 +90301,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 10,
       "control_period_s": 0.05,
@@ -90756,8 +90756,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 10,
       "control_period_s": 0.05,
@@ -91211,8 +91211,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 10,
       "control_period_s": 0.05,
@@ -92602,8 +92602,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 11,
       "control_period_s": 0.05,
@@ -92953,8 +92953,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 11,
       "control_period_s": 0.05,
@@ -93304,8 +93304,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 11,
       "control_period_s": 0.05,
@@ -94695,7 +94695,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 11,
@@ -96086,7 +96086,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 11,
@@ -97477,7 +97477,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 11,
@@ -98868,8 +98868,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 11,
       "control_period_s": 0.05,
@@ -99323,8 +99323,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 11,
       "control_period_s": 0.05,
@@ -99778,8 +99778,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 11,
       "control_period_s": 0.05,
@@ -101169,8 +101169,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 12,
       "control_period_s": 0.05,
@@ -101520,8 +101520,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 12,
       "control_period_s": 0.05,
@@ -101871,8 +101871,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 12,
       "control_period_s": 0.05,
@@ -103262,7 +103262,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 12,
@@ -103977,7 +103977,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 12,
@@ -105134,7 +105134,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 12,
@@ -106525,8 +106525,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 12,
       "control_period_s": 0.05,
@@ -106980,8 +106980,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 12,
       "control_period_s": 0.05,
@@ -107435,8 +107435,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 12,
       "control_period_s": 0.05,
@@ -108826,8 +108826,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 13,
       "control_period_s": 0.05,
@@ -109177,8 +109177,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 13,
       "control_period_s": 0.05,
@@ -109528,8 +109528,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 13,
       "control_period_s": 0.05,
@@ -110919,7 +110919,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 13,
@@ -112310,7 +112310,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 13,
@@ -113701,7 +113701,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 13,
@@ -115092,8 +115092,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 13,
       "control_period_s": 0.05,
@@ -115547,8 +115547,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 13,
       "control_period_s": 0.05,
@@ -116002,8 +116002,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 13,
       "control_period_s": 0.05,
@@ -117393,8 +117393,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 14,
       "control_period_s": 0.05,
@@ -117783,8 +117783,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 14,
       "control_period_s": 0.05,
@@ -118134,8 +118134,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 14,
       "control_period_s": 0.05,
@@ -119525,7 +119525,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 14,
@@ -120916,7 +120916,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 14,
@@ -122307,7 +122307,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 14,
@@ -123698,8 +123698,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 14,
       "control_period_s": 0.05,
@@ -124153,8 +124153,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 14,
       "control_period_s": 0.05,
@@ -124608,8 +124608,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 14,
       "control_period_s": 0.05,
@@ -125999,8 +125999,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 15,
       "control_period_s": 0.05,
@@ -126350,8 +126350,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 15,
       "control_period_s": 0.05,
@@ -126701,8 +126701,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 15,
       "control_period_s": 0.05,
@@ -128092,7 +128092,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 15,
@@ -129483,7 +129483,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 15,
@@ -130874,7 +130874,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 15,
@@ -132265,8 +132265,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 15,
       "control_period_s": 0.05,
@@ -132720,8 +132720,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 15,
       "control_period_s": 0.05,
@@ -133175,8 +133175,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 15,
       "control_period_s": 0.05,
@@ -134566,8 +134566,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 16,
       "control_period_s": 0.05,
@@ -134917,8 +134917,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 16,
       "control_period_s": 0.05,
@@ -135268,8 +135268,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 16,
       "control_period_s": 0.05,
@@ -136659,7 +136659,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 16,
@@ -138050,7 +138050,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 16,
@@ -139337,7 +139337,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 16,
@@ -140728,8 +140728,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 16,
       "control_period_s": 0.05,
@@ -141183,8 +141183,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 16,
       "control_period_s": 0.05,
@@ -141638,8 +141638,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 16,
       "control_period_s": 0.05,
@@ -143029,8 +143029,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 17,
       "control_period_s": 0.05,
@@ -143380,8 +143380,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 17,
       "control_period_s": 0.05,
@@ -143731,8 +143731,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 17,
       "control_period_s": 0.05,
@@ -145122,7 +145122,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 17,
@@ -146513,7 +146513,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 17,
@@ -147904,7 +147904,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 17,
@@ -149295,8 +149295,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 17,
       "control_period_s": 0.05,
@@ -149750,8 +149750,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 17,
       "control_period_s": 0.05,
@@ -150205,8 +150205,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 17,
       "control_period_s": 0.05,
@@ -151596,8 +151596,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 18,
       "control_period_s": 0.05,
@@ -151947,8 +151947,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 18,
       "control_period_s": 0.05,
@@ -152298,8 +152298,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 18,
       "control_period_s": 0.05,
@@ -153689,7 +153689,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 18,
@@ -155080,7 +155080,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 18,
@@ -156471,7 +156471,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 18,
@@ -157862,8 +157862,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 18,
       "control_period_s": 0.05,
@@ -158317,8 +158317,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 18,
       "control_period_s": 0.05,
@@ -158772,8 +158772,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 18,
       "control_period_s": 0.05,
@@ -160163,8 +160163,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "gmm_heuristic",
       "seed": 19,
       "control_period_s": 0.05,
@@ -160514,8 +160514,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "heuristic",
       "seed": 19,
       "control_period_s": 0.05,
@@ -160865,8 +160865,8 @@
       ]
     },
     {
-      "scenario": "Validated Point-to-Point",
-      "description": "Collision-free direct query for the corrected Python geometry",
+      "scenario": "Benchmark Point-to-Point",
+      "description": "Positive-clearance direct planning query",
       "mode": "uniform",
       "seed": 19,
       "control_period_s": 0.05,
@@ -162256,7 +162256,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "gmm_heuristic",
       "seed": 19,
@@ -163647,7 +163647,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "heuristic",
       "seed": 19,
@@ -165038,7 +165038,7 @@
       ]
     },
     {
-      "scenario": "Validated Obstacle Detour",
+      "scenario": "Benchmark Obstacle Detour",
       "description": "Safe endpoints with a colliding direct interpolation",
       "mode": "uniform",
       "seed": 19,
@@ -166429,8 +166429,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "gmm_heuristic",
       "seed": 19,
       "control_period_s": 0.05,
@@ -166884,8 +166884,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "heuristic",
       "seed": 19,
       "control_period_s": 0.05,
@@ -167339,8 +167339,8 @@
       ]
     },
     {
-      "scenario": "Validated Multi-Axis Motion",
-      "description": "Collision-free multi-axis query from the historical complex start",
+      "scenario": "Benchmark Multi-Axis Motion",
+      "description": "Positive-clearance multi-axis planning query",
       "mode": "uniform",
       "seed": 19,
       "control_period_s": 0.05,

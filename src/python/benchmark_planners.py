@@ -319,7 +319,7 @@ def run_benchmark(
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--output", type=Path, default=Path("results") / "corrected" / "benchmark"
+        "--output", type=Path, default=Path("results") / "benchmark"
     )
     parser.add_argument("--seeds", type=int, nargs="+", default=list(DEFAULT_SEEDS))
     parser.add_argument("--duration", type=float, default=6.0)

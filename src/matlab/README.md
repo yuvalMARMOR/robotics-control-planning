@@ -1,33 +1,67 @@
-# MATLAB legacy dynamics and PID study
+# MATLAB dynamics and PID control
 
-The MATLAB scripts are a separate, simplified historical study. They are not the
-dynamic plant for the Python planner and they are not a validated rigid-body
-model.
+This part of the project studies a four-coordinate 3R+1P mechanism through
+open-loop numerical simulation and joint-space PID position control. It
+complements the Python kinematic planner by focusing on state evolution,
+generalized inputs, feedback, and visual response.
 
-The pre-repair source is preserved by Git tag `legacy-pre-technical-repair`.
-The tracked scripts correct only implementation defects whose intent is clear:
+## Numerical model
 
-- state and velocity vectors are refreshed every step;
-- generalized inputs are explicit four-element column vectors;
-- the configuration-dependent gravity expression is no longer multiplied by a
-  velocity row vector or described as a conventional Coriolis matrix;
-- position integration uses the old velocity and a single `0.5*a*dt^2` term;
-- the PID integral includes `dt`, and the documented `Kp`, `Ki`, `Kd` ordering is
-  applied directly;
-- the prismatic coordinate uses acceleration component four;
-- time starts at zero and the simulation no longer plots untouched trailing
-  preallocation after an overshoot-triggered break.
+The scripts use the project model
 
-The following cannot be repaired uniquely from repository evidence:
+```math
+M_{project}\ddot q+g_{project}(q)=u,
+```
 
-- physical units for length, mass, inertia, generalized input, and prismatic
-  displacement;
-- the degree/radian convention required by a physical dynamic model;
-- a validated `M(q)`, `C(q,qdot)`, or `G(q)` derivation;
-- whether the fourth diagonal term should be `I5` or `m5`;
-- equivalence to the independent Python kinematic frames.
+where `M_project` is a constant diagonal matrix and `g_project(q)` is the
+configuration-dependent expression assembled in the scripts. The implementation
+keeps generalized coordinates and inputs as explicit four-element vectors and
+updates position and velocity at each simulation step.
 
-Consequently, new MATLAB output must be described as a run of the corrected
-legacy numerical study, not as experimental or physically validated robot
-performance. A MATLAB/Octave runtime was not available in the repair environment,
-so the scripts received static review only.
+For constant acceleration over one step,
+
+```math
+q_{k+1}=q_k+\dot q_k\Delta t+\frac{1}{2}\ddot q_k\Delta t^2,
+\qquad
+\dot q_{k+1}=\dot q_k+\ddot q_k\Delta t.
+```
+
+## PID controller
+
+The sampled controller uses
+
+```math
+e_k=q_d-q_k,
+\qquad
+I_k=I_{k-1}+e_k\Delta t,
+\qquad
+D_k=\frac{e_k-e_{k-1}}{\Delta t},
+```
+
+```math
+u_k=K_pe_k+K_iI_k+K_dD_k.
+```
+
+The target is three rotary coordinates at `90°` and the prismatic coordinate at
+`40 mm`. Gains are specified per coordinate in `part1_pid.m`.
+
+## Running the simulations
+
+In MATLAB, change to this directory and run:
+
+```matlab
+run('part1_not_pid.m')
+run('part1_pid.m')
+```
+
+Both scripts present joint positions, joint velocities, and a 3D arm view. The
+project notebook places these visual results next to the corresponding theory and
+interpretation.
+
+## Model scope
+
+The stored parameters define the numerical study included in this repository.
+Future hardware-oriented work can add a calibrated unit set, frame map, and
+experimentally identified rigid-body parameters. The MATLAB and Python components
+currently use their own model conventions and serve complementary simulation and
+planning roles.

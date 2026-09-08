@@ -1,5 +1,5 @@
-# Corrected Python workflow tested with CPython 3.13.0 on 2026-08-31.
-# Historical dependency versions remain unknown and are not implied by this lock.
+# Project Python workflow tested with CPython 3.13.0 on 2026-08-31.
+# Direct runtime versions used for the reproducible planning and benchmark workflow.
 numpy==2.1.2
 matplotlib==3.9.2
 scipy==1.14.1

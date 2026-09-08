@@ -240,10 +240,10 @@ mpc_motion_planning_output/
 !assets/images/
 !assets/images/*.png
 
-# Corrected seeded benchmark artifacts are intentionally versioned.
+# Seeded benchmark artifacts are intentionally versioned.
 !results/
-!results/corrected/
-!results/corrected/**/*.png
+!results/benchmark/
+!results/benchmark/**/*.png
 
 # =========================
 # OS junk
