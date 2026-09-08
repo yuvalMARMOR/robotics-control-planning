@@ -213,7 +213,7 @@ Let `b(q_start,q_goal)` be the step-limited straight baseline and `xi` a feasibl
 trajectory. The model learns residual states after the fixed start:
 
 ```math
-\rho=\operatorname{vec}\left(\xi_{1:N-1}-b_{1:N-1}\right).
+\rho=\mathrm{vec}\left(\xi_{1:N-1}-b_{1:N-1}\right).
 ```
 
 A full-covariance mixture is fitted:
@@ -256,8 +256,8 @@ Obstacles are represented as spheres and each robot link as a line segment with 
 `0.02 m` radius. For link endpoints `a,b` and obstacle center `c`,
 
 ```math
-\alpha^*=\operatorname{clip}\left(
-\frac{(c-a)^T(b-a)}{\lVert b-a\rVert^2},0,1\right),
+\alpha^*=\min\left(1,\max\left(0,
+\frac{(c-a)^T(b-a)}{\lVert b-a\rVert^2}\right)\right),
 \qquad p^*=a+\alpha^*(b-a),
 ```
 
